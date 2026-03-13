@@ -573,7 +573,7 @@ namespace Csla.Core.FieldManager
             {
               if (oldItem is null)
               {
-                var propInfo = _propertyList.Where(r => r.Index == index).First();
+                var propInfo = _propertyList.First(r => r.Index == index);
                 if (propInfo.RelationshipType.HasFlag(RelationshipTypes.LazyLoad))
                   undoable.UndoChanges(parentEditLevel, parentBindingEdit);
                 _fieldData[index] = null;
